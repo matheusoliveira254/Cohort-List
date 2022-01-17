@@ -42,7 +42,7 @@ Now to add the view elements.
 
 * Navigate to your `Object Library` and drag a `Bar Button Item` to the top left of the scene. Update the item to be an `Add` item.
 * We will need a view element that will receive text from the user. Drag the appropriate element onto the canvas `ABOVE` the prototype cells.
-* Give this element a `Placeholder` of `Enter Name of Meal Here...`
+* Give this element a `Placeholder` of `Enter the Name of the Student Here...`
 * You do not need to constrain this item, or the `Bar Button Item` they will use their intrinsic constraints.
 * Update the style of the `Table View Cell` to `Basic` via the `Attributes Inspector` with the cell selected.
 
