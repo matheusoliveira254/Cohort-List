@@ -104,7 +104,7 @@ Within the body of this function initialize a new `Student` object.
 Declare a new `func` named `deleteStudent` with a parameter of type `Student`
 To delete this object in our collection we first need to know `where` in the collection the object is. To do that we will create a new constant named `index` and assign the result of the `firstIndex(of:)` function from the `students` array.
 
-WAIT! Before we can find the index, or even find the function `firstIndex(of:)` method, we need our `Student` object to be `Equatable`
+WAIT! Before we can find the index, or even find the `firstIndex(of:)` method, we need our `Student` object to be `Equatable`
 
 Navigate back to your Model and conform to the `Equatable` protocol.
 ``` swift
