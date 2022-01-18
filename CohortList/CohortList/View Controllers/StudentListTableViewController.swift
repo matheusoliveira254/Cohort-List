@@ -37,7 +37,7 @@ class StudentListTableViewController: UITableViewController, UITextFieldDelegate
         // run:5 (s0,r4)
   
         cell.textLabel?.text = studentForIndexPath.name
-        cell.textLabel?.text?.append(": \(studentList[indexPath.row].age)")
+        cell.textLabel?.text?.append(": \(studentList[indexPath.row].cohortNumber)")
     
         return cell
     }
@@ -56,11 +56,11 @@ class StudentListTableViewController: UITableViewController, UITextFieldDelegate
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let student = Student(name: StudentController.sharedInstance.studentList[indexPath.row].name,
-                                  age: StudentController.sharedInstance.studentList[indexPath.row].age,
-                                  favoriteColor: StudentController.sharedInstance.studentList[indexPath.row].favoriteColor)
-            
-            StudentController.sharedInstance.deleteStudent(student: student)
+//            let student = Student(name: StudentController.sharedInstance.studentList[indexPath.row].name,
+//                                  age: StudentController.sharedInstance.studentList[indexPath.row].cohortNumber,
+//                                  favoriteColor: StudentController.sharedInstance.studentList[indexPath.row].studentDescription)
+//
+//            StudentController.sharedInstance.deleteStudent(student: student)
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } 
