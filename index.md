@@ -384,16 +384,16 @@ self.navigationController?.popViewController(animated: true)
 
 #### Save
 Save will be the largest and most challenging method of the three. Within the scope of the `saveButtonTapped` method
-• `guard` against any of the `text` properties of the `TextFields` being nil
-• Conditionally unwrap the `studentReciever` optional property.
-	• If there is a value
-		• Then the user navigated here via the cells segue. Which means they are trying to update a existing `Student`
-		• Call your update method and pass in the unwrapped values
-	• If there is not a value
-		• Then the user did not navigate here via the cells segue. Which means they are trying to create a new `Student`
-		• Call your `createStudent` function from your singleton.
-• Outside the conditional unwrap, but within the scope of the `saveButtonTapped` method
-	• Remove this screen and navigate back to the `StudentListTableViewController` 
+* `guard` against any of the `text` properties of the `TextFields` being nil
+* Conditionally unwrap the `studentReciever` optional property.
+	* If there is a value
+		* Then the user navigated here via the cells segue. Which means they are trying to update a existing `Student`
+		* Call your update method and pass in the unwrapped values
+	* If there is not a value
+		* Then the user did not navigate here via the cells segue. Which means they are trying to create a new `Student`
+		* Call your `createStudent` function from your singleton.
+* Outside the conditional unwrap, but within the scope of the `saveButtonTapped` method
+	* Remove this screen and navigate back to the `StudentListTableViewController` 
 
 
 Nice work! Build and run your app! Everything should be working - but fix any bugs that may be present! Well done.
