@@ -15,15 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter age..." minimumFontSize="17" id="0aE-d6-KMI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" textLabel="pJV-BK-8yW" style="IBUITableViewCellStyleDefault" id="xM5-xj-tep">
-                                <rect key="frame" x="0.0" y="78.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xM5-xj-tep" id="XHa-YC-eSR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -47,22 +41,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="c1L-bD-Ozl">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="br5-E5-lIg">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="kci-bp-BNA" id="ARE-gu-a8v"/>
-                            </connections>
-                        </barButtonItem>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of &quot;MEAL&quot; here..." textAlignment="natural" minimumFontSize="17" id="yZf-1O-IYO">
-                            <rect key="frame" x="99" y="5" width="216" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="br5-E5-lIg"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="studentAgeTextField" destination="0aE-d6-KMI" id="DP8-Pn-7Aj"/>
-                        <outlet property="studentNameTextField" destination="yZf-1O-IYO" id="9aN-Zx-fzb"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pb5-Xs-EEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
