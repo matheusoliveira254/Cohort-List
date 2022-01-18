@@ -35,6 +35,7 @@ Now that this file exists we need to link, or subclass, our `UITableViewControll
 
 * To do this navigate back to your storyboard, select the 	`UITableView Controller` scene in the `view hierarchy`. 
 * With the `scene` selected show the `Identity Inspector` and using the drop down menu for `Class` select  `StudentListTableViewController`
+* Set the `resuse Identifier` for the cell with the name `studentCell` 
 
 Pausing here to build and run is a great practice. Your app should build and display a blank `UITableviewController`
 
@@ -185,3 +186,218 @@ Okay! Build and run your app! Test the functionality and fix any bugs present.
 # Stretch goals
 * Add a second `UITextField` to set a second property. Display the updated information
 * Write comments for every line of code within your project explaining what It does
+
+---
+
+#  Cohort List - Part Two
+
+In this project, you will update the `Student List` app you created yesterday. With a tap on each Student you’ll be taken to a detail screen that shows even more information. We will use everything you’ve learned so far, and a few new tricks to complete this!
+
+Students who complete this project independently or as a pairing will showcase their understanding of the following principles:
+
+* Basic Storyboard constraints
+* UITableviews
+* Creating Custom `class` objects
+* Constants, Variables, and basic Data Types
+* Collections
+* Functions
+* Control Flow
+* IBActions && IBOutlets
+* Segue
+* Multiple Views
+---
+
+## Clean up the workspace
+Because our UI/UX team has decided that this app needs to have a detail screen for a better experience we will need to change the design a bit and delete some of your previous work. What a bummer… 
+
+#### Before we begin create and navigate to new  git branch named `Part Two`
+``` git
+Git checkout Part_Two
+```
+
+If this local repo is not set up on `GitHub` either try and set it up on your own or ask an instructor for support.
+
+Okay.. back to business
+
+The `StudentListTableViewController` will now only display data so we no longer need the `UITextField` on the top of the screen. We also will no longer need to use the `IBAction` from our `Bar Button Item`.
+* Delete the `UITextField` and the corresponding Outlet
+* Delete the `AddButtonTapped` `IBAction` and it’s related connection.
+	* Note: You remove the connection via the `Connections Inspector`
+	* Note: We will still need the `Bar Button Item`
+
+On the `StudentListTableViewController` file we will no longer need to extend the `StudenListTableViewController` and adopt the `UITexftFieldDelegate` protocol.  
+* Delete this adoption and the extension which holds  the `textFieldShouldReturn` method.
+
+We also no longer need our `createStudent` helper function. Delete this.
+
+Build and run your app. Fix any bugs that may be present.
+---
+
+## Update Model
+In the first section we had you create the `Student` Model with a name property and at least three additional properties.  Depending on what properties you decided to use you may not have to update your `Model`…
+
+For this section your `Model` needs to have the following properties
+* name
+* cohortNumber: Int
+* studentDescription
+
+Update your model and the `Equatable` conformance accordingly.
+---
+
+## Update CRUD Functions
+In the first section we had you create the `Student` Model with a name property and at least three additional properties.  Depending on what properties you decided to use you may not have to update your `create` method.
+
+On the `StudentController`file, update your `createStudent` method to take in the correct properties. This should fix the error you most likely faced.
+
+While we are here we should build a new method that will allow our users to `update` their `Student` Objects.
+* Declare a new function named `updateStudent`
+	* This should have a few parameters
+		* a  `Student` object 
+		* a `newName`
+		* a `newCohortNumber`
+		* and a `newStudentDetails`
+		* Set these up with the appropriate types.
+* Within the body of this method, set the properties of the `Student` object that was passed in via the parameters to the new values that were also passed in via the parameters.
+
+Nice! Now we have no errors and a shiny `update` function! 
+---
+
+## New-New Navigation
+Now that we’ve deleted some of our older code we can start building the detail screen.
+
+* Via the `Object Library` Drop a new `UIViewController` onto the canvas. We’ve found that placing it to the right of the list view looks and feels the best.
+
+We will need two new connections, called `Segue`s, to compete the navigation setup. One `Segue` will come from the `Bar Button Item` to the Detail Screen, and one `Segue` will come from the `UITableView Cell`
+
+To create those `Segue`s please:
+* Control-Drag from the `Add` button to the new, blank, `UIViewController`
+* Control-Drag from the `studentCell` to the new, blank, `UIViewController`
+	* Because this segue will be responsible for passing some data, (cool!), we will need to give this `Segue` an `Identifier`
+	* Click onto the `segue` which connects the `studentCell` to the new, blank, `UIViewController`.
+	* Via the `Attributes Inspector`  enter `toDetailVC` in the `Indentifier` space.
+
+The new, blank, `UIViewController` needs to be subclassed. 
+* Create a new `Cocoa Touch Class` file and name it `StudentDetailViewController`. 
+* Complete the subclass by setting the `subclass` for this `ViewController` via the `Identity Inspector`.
+
+Now is a great time to build and run your app.
+---
+## New-New Design
+Okay! We are crushing this new design setup. We’ve got the navigation set up, so all that’s left is to add the remaining view elements onto the `StudentDetailViewController` and create the corresponding `IBAction`s and `IBOoutlets`
+
+* Similar to what you did yesterday - add a view element that receives text onto the `Navigation Header`
+* Set the `Placeholder` text to (Student Name)
+* Add a new `Bar Button Item` and drop it on the right side of the `Navigation Header`.
+* Set this `Bar Button Item` to `Save`
+
+### Starting from the top down
+Let’s begin our interface design by adding a `Stack View` with a `Label` and a `UITextField`.
+
+* Drag a `Label` object from the `Object Library` and drop it onto the canvas
+* Drag a `UITextField` object from the `Object Library` and drop it onto the canvas.
+* Embed the  `Label`  and the `UITextField`into a `Stack View`
+* Via the `Attributes Inspector` Set the labels text to `Cohort`
+* Give the `UITextField` a placeholder that says what it will display
+	* Enter Cohort number
+* Via the `Attributes Inspector` of the `Stack View` adjust the following values
+	* Set the alignment to Fill
+	* Set the Distribution to Fill
+	* Set the spacing to 25
+* Lock in your `Stack View` with the following constraints
+	* Align `Leading` and `Trailing` to 15 points to the `Safe Area`
+	* Align the `Top`space to 20 points to the `Safe Area`
+ 
+Now, we need to add a `UITextView` that will be used to describe the `Student`
+
+* Drag a `UITextView` object from the `Object Library` and drop it under the `Stack View`
+* Lock in your `UITextView` with the following constraints
+	* Align `Leading` and `Trailing` to 15 points to the `Safe Area`
+	* Align the `Top`space to 20 points to the `Stack View`
+	* Add some placeholder text that will describe what this view will display
+
+Let’s end our interface design by adding a `Stack View` with two `Buttons`.
+
+* Drag two `Button` objects from the `Object Library` and drop them onto the canvas
+* Embed both  `Button` s into a `Stack View`
+* Via the `Attributes Inspector` Set the `Button`s titles to 
+	* Clear 
+	* Delete
+* Via the `Attributes Inspector` of the `Stack View` adjust the following values
+	* Set the alignment to Fill
+	* Set the Distribution to Fill
+	* Set the spacing to 5
+* Lock in your `Stack View` with the following constraints
+	* Align `Leading` and `Trailing` to 20 points to the `Safe Area`
+	* Align the `Top`space to 20 points to the `UITextField`
+	* Align the `Bottom`space to the `Safe Area`
+	* This should now lock all the view elements in place and solve any constraint issues.
+### Don’t forget to create the corresponding `Outlets` and `Actions ` for the view elements we just created.
+
+Build and run dat app
+
+---
+
+## Back to coding! Yay!
+Our plan is use the `Segue` we created from the `cell`  to pass a `Student` object to the `StudentDetailViewController`. But for that to succeed we need something to `catch` that data when it’s sent. To do this:
+• On the `StudentDetailViewController` , declare a new variable named `studentreceiver` and set the type to be an optional `Student`.
+
+Navigate to the `StudentListTableViewController` and copy the code below and paste it above the ending curly brace. We will be teaching you how this code works tomorrow 😆
+
+``` swift
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailVC" {
+            if let destination = segue.destination as? StudentDetailViewController,
+               let indexPath = tableView.indexPathForSelectedRow {
+                let studentToPass = StudentController.shared.students[indexPath.row]
+                destination.studentReciver = studentToPass
+            }
+        }
+    }
+```
+
+While you are on the `StudentListTableViewController` add the life cycle method `viewDidAppear` and reload the tableview.
+
+Navigate back to the `StudentDetailViewController` swift file for these next few steps.
+
+Build a helper function that will take a `Student` objects and display the data accordingly. 
+* Declare a func with a proper name for what this function will be doing.
+* This method should have one parameter of type `Student` optional
+* Within the body guard against `student` not having a value
+* Set your view elements to display the corresponding properties from the now unwrapped `student`
+* Call this function in  `viewDidload`
+
+All we have left to do is complete the code for the buttons we have! Lets knock those out
+
+#### Clear
+Create a helper method named `clearData` with no parameters or return type.
+Set the values of each of the `UITextFields` to an empty string.
+Call this method in the `IBAction` for the `clearButton` 
+
+#### Delete
+Within the scope of the `IBAction` for the `deleteButton`
+* Conditionally unwrap the `studetReciever`
+	* If that value exists call your `deleteStudent(student:)` method from your `singleton`
+	* Remove this screen and navigate back to the `StudentListTableViewController` by adding the following the code:
+```swift
+self.navigationController?.popViewController(animated: true)
+```
+
+#### Save
+Save will be the largest and most challenging method of the three. Within the scope of the `saveButtonTapped` method
+• `guard` against any of the `text` properties of the `TextFields` being nil
+• Conditionally unwrap the `studentReciever` optional property.
+	• If there is a value
+		• Then the user navigated here via the cells segue. Which means they are trying to update a existing `Student`
+		• Call your update method and pass in the unwrapped values
+	• If there is not a value
+		• Then the user did not navigate here via the cells segue. Which means they are trying to create a new `Student`
+		• Call your `createStudent` function from your singleton.
+• Outside the conditional unwrap, but within the scope of the `saveButtonTapped` method
+	• Remove this screen and navigate back to the `StudentListTableViewController` 
+
+
+Nice work! Build and run your app! Everything should be working - but fix any bugs that may be present! Well done.
+
+
+
+
