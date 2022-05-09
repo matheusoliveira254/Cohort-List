@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Student: Equatable{
+class Student {
     
     var name: String
     var age: String
@@ -18,9 +18,13 @@ class Student: Equatable{
         self.age = age
         self.favoriteColor = favoriteColor
     }
-    
+}// End of class
+
+extension Student: Equatable {
     static func == (lhs: Student, rhs: Student) -> Bool {
-        return (lhs.name == rhs.name && lhs.favoriteColor == rhs.favoriteColor && lhs.age == rhs.age)
+        return lhs.name == rhs.name &&
+        lhs.age == rhs.age &&
+        lhs.favoriteColor == rhs.favoriteColor
     }
 }
 
