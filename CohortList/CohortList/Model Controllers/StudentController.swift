@@ -14,13 +14,13 @@ class StudentController {
     var students: [Student] = []
     
     //MARK: CRUD Functions
-    func createStudent(name: String) { //Can add other parameters here for second text input
-        let newStudent: Student = Student(name: name, age: "32", favoriteColor: "Red")
+    func createStudent(name: String, cohort: String) {
+        let newStudent: Student = Student(name: name, cohort: cohort)
         students.append(newStudent)
     }
     
-    func deleteStudent(student: Student) {
-        guard let index = students.firstIndex(of: student) else {return}
-        students.remove(at: index)
-    }
+//    func deleteStudent(student: Student) {
+//        guard let index = students.firstIndex(of: student) else {return}
+//        students.remove(at: index)
+//    }
 }

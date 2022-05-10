@@ -15,16 +15,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="A3L-0T-Ajw">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N1I-QI-QV9">
+                                    <rect key="frame" x="4" y="4" width="406" height="92"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Student Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D3t-aB-grm">
+                                            <rect key="frame" x="0.0" y="0.0" width="406" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="uAG-u9-vbT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Cohort ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZV-cO-mSb">
+                                            <rect key="frame" x="0.0" y="48" width="406" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.15744033460000001" green="0.92504143709999997" blue="0.99998575450000005" alpha="0.4954621776" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="N1I-QI-QV9" firstAttribute="leading" secondItem="A3L-0T-Ajw" secondAttribute="leading" constant="4" id="CMX-Gg-poy"/>
+                                <constraint firstAttribute="trailing" secondItem="N1I-QI-QV9" secondAttribute="trailing" constant="4" id="RDP-xg-qnZ"/>
+                                <constraint firstAttribute="bottom" secondItem="N1I-QI-QV9" secondAttribute="bottom" constant="4" id="UFA-og-SsK"/>
+                                <constraint firstItem="N1I-QI-QV9" firstAttribute="top" secondItem="A3L-0T-Ajw" secondAttribute="top" constant="4" id="f6h-Tb-rwA"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" textLabel="pJV-BK-8yW" style="IBUITableViewCellStyleDefault" id="xM5-xj-tep">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" textLabel="pJV-BK-8yW" detailTextLabel="ohz-cF-37b" style="IBUITableViewCellStyleValue1" id="xM5-xj-tep">
+                                <rect key="frame" x="0.0" y="144.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xM5-xj-tep" id="XHa-YC-eSR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pJV-BK-8yW">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="20" y="15" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ohz-cF-37b">
+                                            <rect key="frame" x="361" y="15" width="33" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -41,12 +79,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="c1L-bD-Ozl">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Student Name Here" textAlignment="natural" minimumFontSize="17" id="V4G-Ry-E77">
-                            <rect key="frame" x="110.5" y="5" width="193.5" height="34"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="br5-E5-lIg">
                             <connections>
                                 <action selector="addStudentButtonTapped:" destination="kci-bp-BNA" id="Wgf-wT-TY7"/>
@@ -54,7 +86,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="studentNameTextField" destination="V4G-Ry-E77" id="O6e-HM-bNq"/>
+                        <outlet property="cohortIdTextField" destination="gZV-cO-mSb" id="eeh-FX-Pha"/>
+                        <outlet property="studentNameTextField" destination="D3t-aB-grm" id="l7D-Ej-rD2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pb5-Xs-EEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

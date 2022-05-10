@@ -10,12 +10,23 @@ import UIKit
 class StudentListTableViewController: UITableViewController, UITextFieldDelegate{
 
     @IBOutlet weak var studentNameTextField: UITextField!
+    @IBOutlet weak var cohortIdTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // Helper Functions
+    func createStudent() {
+        guard let name = studentNameTextField.text, let cohortID = cohortIdTextField.text else {return}
+        StudentController.sharedInstance.createStudent(name: name, cohort: cohortID)
+        studentNameTextField.text = ""
+        cohortIdTextField.text = ""
+        tableView.reloadData()
+    }
 
     @IBAction func addStudentButtonTapped(_ sender: Any) {
+        createStudent()
     }
     
     // MARK: - Table view data source
@@ -28,17 +39,13 @@ class StudentListTableViewController: UITableViewController, UITextFieldDelegate
 
         // Configure the cell...
 
-        let studentList = StudentController.sharedInstance.students
-        let studentForIndexPath = studentList[indexPath.row]
+        let students = StudentController.sharedInstance.students
+        let studentToDisplay = students[indexPath.row]
       
-        cell.textLabel?.text = studentForIndexPath.name
-        cell.textLabel?.text?.append(": \(studentList[indexPath.row].age)")
-    
+        cell.textLabel?.text = studentToDisplay.name
+        cell.detailTextLabel?.text = studentToDisplay.cohortNumber
+        
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-       
     }
 }
 

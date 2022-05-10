@@ -10,21 +10,19 @@ import Foundation
 class Student {
     
     var name: String
-    var age: String
-    var favoriteColor: String
+    var cohortNumber: String
     
-    init(name: String, age: String, favoriteColor: String) {
+    
+    init(name: String, cohort: String) {
         self.name = name
-        self.age = age
-        self.favoriteColor = favoriteColor
+        self.cohortNumber = cohort
     }
 }// End of class
 
 extension Student: Equatable {
     static func == (lhs: Student, rhs: Student) -> Bool {
         return lhs.name == rhs.name &&
-        lhs.age == rhs.age &&
-        lhs.favoriteColor == rhs.favoriteColor
+        lhs.cohortNumber == rhs.cohortNumber
     }
 }
 
