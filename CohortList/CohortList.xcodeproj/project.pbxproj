@@ -12,9 +12,6 @@
 		D2F7B263279650B800A84719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F7B261279650B800A84719 /* Main.storyboard */; };
 		D2F7B265279650B900A84719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F7B264279650B900A84719 /* Assets.xcassets */; };
 		D2F7B268279650B900A84719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F7B266279650B900A84719 /* LaunchScreen.storyboard */; };
-		D2F7B2752796524200A84719 /* StudentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7B2742796524200A84719 /* StudentListTableViewController.swift */; };
-		D2F7B277279653BB00A84719 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7B276279653BB00A84719 /* Student.swift */; };
-		D2F7B2792796541A00A84719 /* StudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7B2782796541A00A84719 /* StudentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +22,6 @@
 		D2F7B264279650B900A84719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2F7B267279650B900A84719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2F7B269279650B900A84719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2F7B2742796524200A84719 /* StudentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListTableViewController.swift; sourceTree = "<group>"; };
-		D2F7B276279653BB00A84719 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		D2F7B2782796541A00A84719 /* StudentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +78,6 @@
 		D2F7B2702796512A00A84719 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D2F7B276279653BB00A84719 /* Student.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,7 +85,6 @@
 		D2F7B2722796513300A84719 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2F7B2782796541A00A84719 /* StudentController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -100,7 +92,6 @@
 		D2F7B2732796513F00A84719 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2F7B2742796524200A84719 /* StudentListTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -176,11 +167,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F7B2792796541A00A84719 /* StudentController.swift in Sources */,
-				D2F7B2752796524200A84719 /* StudentListTableViewController.swift in Sources */,
 				D2F7B25C279650B800A84719 /* AppDelegate.swift in Sources */,
 				D2F7B25E279650B800A84719 /* SceneDelegate.swift in Sources */,
-				D2F7B277279653BB00A84719 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
