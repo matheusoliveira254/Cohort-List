@@ -299,7 +299,14 @@ Now that our `Student` object conforms to `Equatable` we can use the `firstIndex
 
 1. With that `index` use the `remove(at:)` method on the `students` array to remove that object.
 
-### How do I write this?
+    ### How do I write this?
+
+    ```swift
+    func deleteStudent(student: Student) {
+        guard let index = students.firstIndex(of: student) else {return}
+        students.remove(at: index)
+    }
+    ```
 
 **Great work! Please make a commit with all the wonderful work you just completed.** 
 
