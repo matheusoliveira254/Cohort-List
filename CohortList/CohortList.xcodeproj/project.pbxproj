@@ -54,9 +54,6 @@
 		D2F7B25A279650B800A84719 /* CohortList */ = {
 			isa = PBXGroup;
 			children = (
-				D2F7B2732796513F00A84719 /* View Controllers */,
-				D2F7B2722796513300A84719 /* Model Controllers */,
-				D2F7B2702796512A00A84719 /* Models */,
 				D2F7B26F279650CC00A84719 /* Resources */,
 				D2F7B261279650B800A84719 /* Main.storyboard */,
 			);
@@ -73,27 +70,6 @@
 				D2F7B269279650B900A84719 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		D2F7B2702796512A00A84719 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		D2F7B2722796513300A84719 /* Model Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Model Controllers";
-			sourceTree = "<group>";
-		};
-		D2F7B2732796513F00A84719 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
