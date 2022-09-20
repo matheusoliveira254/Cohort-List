@@ -7,29 +7,28 @@
 
 import UIKit
 
-class StudentListTableViewController: UITableViewController {
+class StudentListTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var studentNameTextField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.studentNameTextField.delegate = self
+        self.studentIDTextField.delegate = self
     }
     
     @IBAction func addNewStudentButton(_ sender: Any) {
         createStudent()
+        emptyTextField()
     }
-    
-
     // MARK: - Table view data source
-
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return StudentController.sharedInstance.students.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
@@ -42,10 +41,22 @@ class StudentListTableViewController: UITableViewController {
         return cell
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        createStudent()
+        emptyTextField()
+        return true
+    }
+    
+    func emptyTextField() {
+        studentNameTextField.text = ""
+        studentIDTextField.text = ""
+    }
+    
     func createStudent() {
         guard let studentNameInput = studentNameTextField.text else {return}
         guard let studentIDInput = studentIDTextField.text else {return}
-        
+
         StudentController.sharedInstance.createStudent(name: studentNameInput, cohortID: studentIDInput)
         tableView.reloadData()
     }
