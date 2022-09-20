@@ -19,16 +19,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-Of-vlJ">
-                                    <rect key="frame" x="8" y="33" width="345" height="34"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="z0F-Of-vlJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Student Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bqp-Vg-CyA">
-                                            <rect key="frame" x="0.0" y="0.0" width="170.5" height="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Cohot ID..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e16-No-Pcz">
-                                            <rect key="frame" x="174.5" y="0.0" width="170.5" height="34"/>
+                                            <rect key="frame" x="0.0" y="52" width="414" height="48"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
@@ -36,6 +36,12 @@
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemCyanColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="z0F-Of-vlJ" secondAttribute="trailing" id="4CW-JT-IFW"/>
+                                <constraint firstAttribute="bottom" secondItem="z0F-Of-vlJ" secondAttribute="bottom" id="gRm-N0-6in"/>
+                                <constraint firstItem="z0F-Of-vlJ" firstAttribute="top" secondItem="OMh-1T-CcQ" secondAttribute="top" id="m6Q-mT-9kc"/>
+                                <constraint firstItem="z0F-Of-vlJ" firstAttribute="leading" secondItem="OMh-1T-CcQ" secondAttribute="leading" id="rv3-po-Cpa"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentCell" textLabel="2an-EA-MZD" detailTextLabel="TOA-n4-he6" style="IBUITableViewCellStyleValue1" id="xM5-xj-tep">
@@ -70,8 +76,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="c1L-bD-Ozl">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="8d7-tj-UVS"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="8d7-tj-UVS">
+                            <connections>
+                                <action selector="addNewStudentButton:" destination="kci-bp-BNA" id="MbI-zt-2xe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="studentIDTextField" destination="e16-No-Pcz" id="1V1-h9-xTG"/>
+                        <outlet property="studentNameTextField" destination="bqp-Vg-CyA" id="03w-66-YRd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pb5-Xs-EEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
