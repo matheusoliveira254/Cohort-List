@@ -13,6 +13,7 @@ class StudentDetailViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var cohortNumberTextField: UITextField!
     @IBOutlet weak var studentDescriptionTextView: UITextView!
     
+    var studentReceiver: Student?
     
     override func viewDidLoad() {
         super.viewDidLoad()
