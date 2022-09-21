@@ -15,12 +15,9 @@ class StudentListTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.studentNameTextField.delegate = self
-        self.studentIDTextField.delegate = self
     }
     
     @IBAction func addNewStudentButton(_ sender: Any) {
-        createStudent()
         emptyTextField()
     }
     // MARK: - Table view data source
@@ -43,7 +40,6 @@ class StudentListTableViewController: UITableViewController, UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        createStudent()
         emptyTextField()
         return true
     }
@@ -53,11 +49,4 @@ class StudentListTableViewController: UITableViewController, UITextFieldDelegate
         studentIDTextField.text = ""
     }
     
-    func createStudent() {
-        guard let studentNameInput = studentNameTextField.text else {return}
-        guard let studentIDInput = studentIDTextField.text else {return}
-
-        StudentController.sharedInstance.createStudent(name: studentNameInput, cohortID: studentIDInput)
-        tableView.reloadData()
-    }
 }
