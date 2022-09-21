@@ -8,18 +8,12 @@
 import UIKit
 
 class StudentListTableViewController: UITableViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var studentNameTextField: UITextField!
-    @IBOutlet weak var studentIDTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    @IBAction func addNewStudentButton(_ sender: Any) {
-        emptyTextField()
-    }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,13 +34,6 @@ class StudentListTableViewController: UITableViewController, UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        emptyTextField()
         return true
     }
-    
-    func emptyTextField() {
-        studentNameTextField.text = ""
-        studentIDTextField.text = ""
-    }
-    
 }
