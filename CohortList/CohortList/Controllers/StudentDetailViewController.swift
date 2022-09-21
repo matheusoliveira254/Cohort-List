@@ -7,23 +7,27 @@
 
 import UIKit
 
-class StudentDetailViewController: UIViewController {
+class StudentDetailViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var studentNameTextField: UITextField!
+    @IBOutlet weak var cohortNumberTextField: UITextField!
+    @IBOutlet weak var studentDescriptionTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+//        textView.delegate = self
+//        textView.text = "Student Description"
+//        textView.textColor = UIColor.lightGray
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func saveStudentButtonTapped(_ sender: Any) {
     }
-    */
-
+    @IBAction func clearButtonTapped(_ sender: Any) {
+    }
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+    }
+    
+    
 }

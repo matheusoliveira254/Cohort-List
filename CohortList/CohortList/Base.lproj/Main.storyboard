@@ -70,10 +70,86 @@
                     <view key="view" contentMode="scaleToFill" id="0OC-Qb-QvZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bCc-9a-fja">
+                                <rect key="frame" x="15" y="108" width="384" height="79.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cohort" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tQ-7r-8t8">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Cohort Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9WS-Yp-Ske">
+                                        <rect key="frame" x="0.0" y="45.5" width="384" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IWL-Vt-ltv">
+                                <rect key="frame" x="15" y="207.5" width="384" height="543.5"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZLN-dP-XnD">
+                                <rect key="frame" x="20" y="771" width="374" height="31"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA5-2h-3IJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearButtonTapped:" destination="vdy-j7-NGm" eventType="touchUpInside" id="I9S-vT-0Qp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEt-9p-8dh">
+                                        <rect key="frame" x="189.5" y="0.0" width="184.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Delete"/>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="vdy-j7-NGm" eventType="touchUpInside" id="Xey-cu-jqg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0bO-eP-n1t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZLN-dP-XnD" firstAttribute="leading" secondItem="0bO-eP-n1t" secondAttribute="leading" constant="20" id="IkM-Fc-qfV"/>
+                            <constraint firstItem="bCc-9a-fja" firstAttribute="leading" secondItem="0bO-eP-n1t" secondAttribute="leading" constant="15" id="IxY-2U-68d"/>
+                            <constraint firstItem="0bO-eP-n1t" firstAttribute="bottom" secondItem="ZLN-dP-XnD" secondAttribute="bottom" constant="60" id="LSw-Mp-Col"/>
+                            <constraint firstItem="bCc-9a-fja" firstAttribute="top" secondItem="0bO-eP-n1t" secondAttribute="top" constant="20" id="ZsY-uY-hql"/>
+                            <constraint firstItem="0bO-eP-n1t" firstAttribute="trailing" secondItem="bCc-9a-fja" secondAttribute="trailing" constant="15" id="aDV-sl-UQF"/>
+                            <constraint firstItem="0bO-eP-n1t" firstAttribute="trailing" secondItem="ZLN-dP-XnD" secondAttribute="trailing" constant="20" id="dPj-1t-aP0"/>
+                            <constraint firstItem="ZLN-dP-XnD" firstAttribute="top" secondItem="IWL-Vt-ltv" secondAttribute="bottom" constant="20" id="fUi-cB-mvV"/>
+                            <constraint firstItem="0bO-eP-n1t" firstAttribute="trailing" secondItem="IWL-Vt-ltv" secondAttribute="trailing" constant="15" id="lFw-th-OaZ"/>
+                            <constraint firstItem="IWL-Vt-ltv" firstAttribute="leading" secondItem="0bO-eP-n1t" secondAttribute="leading" constant="15" id="tTu-0n-sab"/>
+                            <constraint firstItem="IWL-Vt-ltv" firstAttribute="top" secondItem="bCc-9a-fja" secondAttribute="bottom" constant="20" id="yR8-lJ-dcf"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SBV-xR-STF"/>
+                    <navigationItem key="navigationItem" id="SBV-xR-STF">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(Student Name)" textAlignment="natural" minimumFontSize="17" id="fZX-bl-kVS">
+                            <rect key="frame" x="141.5" y="5" width="131" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="CO2-XG-Vgd">
+                            <connections>
+                                <action selector="saveStudentButton:" destination="vdy-j7-NGm" id="Ggs-ca-tXI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cohortNumberTextField" destination="9WS-Yp-Ske" id="VbM-Ka-wWA"/>
+                        <outlet property="studentDescriptionTextView" destination="IWL-Vt-ltv" id="cGP-3l-4jr"/>
+                        <outlet property="studentNameTextField" destination="fZX-bl-kVS" id="Ex8-mg-PeJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tg-Kx-0o0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,8 +179,14 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
