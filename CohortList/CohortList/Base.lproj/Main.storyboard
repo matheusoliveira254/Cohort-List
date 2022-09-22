@@ -87,7 +87,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IWL-Vt-ltv">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWL-Vt-ltv">
                                 <rect key="frame" x="15" y="207.5" width="384" height="543.5"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -137,11 +137,11 @@
                             <rect key="frame" x="141.5" y="5" width="131" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                         </textField>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="CO2-XG-Vgd">
                             <connections>
-                                <action selector="saveStudentButton:" destination="vdy-j7-NGm" id="Ggs-ca-tXI"/>
+                                <action selector="saveStudentButtonTapped:" destination="vdy-j7-NGm" id="YNi-d3-Hfy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
